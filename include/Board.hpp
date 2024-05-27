@@ -15,5 +15,4 @@ private:
     std::vector<std::vector<int>> grid;
     sf::RectangleShape block;
 };
-
 #endif

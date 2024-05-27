@@ -5,7 +5,7 @@ Board::Board(int width, int height)
 {
     grid.resize(height, std::vector<int>(width, 0));
     block.setSize(sf::Vector2f(30.f, 30.f));
-    block.setFillColor(sf::Color::White);
+    block.setFillColor(sf::Color::Black);
 }
 
 void Board::draw(sf::RenderWindow &window)
@@ -14,11 +14,10 @@ void Board::draw(sf::RenderWindow &window)
     {
         for (int j = 0; j < width; j++)
         {
-            if (grid[i][j] != 0)
-            {
-                block.setPosition(j * 30.f, i * 30.f);
-                window.draw(block);
-            }
+            block.setPosition(j * 30.f, i * 30.f);
+            block.setOutlineThickness(1.f);
+            block.setOutlineColor(sf::Color::White);
+            window.draw(block);
         }
     }
 }
